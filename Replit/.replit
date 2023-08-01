@@ -1,0 +1,14 @@
+compile = "find . -name *.hs | xargs ghc -o main"
+run = "./main"
+entrypoint = "main.hs"
+
+hidden = [".ghci", "ghci_wrapper.sh"]
+
+[languages.haskell]
+pattern = "**/*.hs"
+
+[languages.haskell.languageServer]
+start = ["haskell-language-server", "--lsp"]
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix", ".ghci"]
